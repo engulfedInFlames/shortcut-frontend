@@ -1,18 +1,26 @@
-header(role='banner')
+header.shadow-sm(role='banner')
     .header__left
         a(href='/') 
             span Shortcut
     .header__right
         form(method="post" action="#")
             input.form-control.border.border-end-0.rounded-pill#example-search-input(type="text")
-        .dropdown
-            button.btn.btn-primary.dropdown-toggle#dropdownMenuButton(type="button" data-bs-toggle="dropdown" aria-expanded="false")
-            ul.dropdown-menu(aria-labelledby="dropdownMenuButton")
-                li
-                    a.dropdown-item(href='#') 로그인
-                li
-                    a.dropdown-item(href='#') 로그아웃
-                li
-                    a.dropdown-item(href="#") 내 정보
-                li
-                    a.dropdown-item(href="#") 설정
+        
+        div
+            .video-upload.hover-overlay 
+                button(type="button")
+                    i.bi.bi-box-arrow-in-down
+            .dropdown
+                button.border.d-flex.align-items-center.shadow-sm#dropdownMenuButton(type="button" data-bs-toggle="dropdown" aria-expanded="false" alt="Avatar")
+                    i.bi.bi-list
+                    div.rounded-circle
+                        i.bi.bi-person-fill
+                ul.dropdown-menu(aria-labelledby="dropdownMenuButton")
+                    li
+                        a.dropdown-item(href='#') 로그인
+                    li
+                        a.dropdown-item(href='#') 로그아웃
+                    li
+                        a.dropdown-item(href="#") 내 정보
+                    li
+                        a.dropdown-item(href="#") 설정

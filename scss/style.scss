@@ -1,16 +1,20 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import "header";
-@import "home";
-@import "boxes";
+@import "bootstrap-icons";
+@import "_vars";
+@import "_mixins";
+@import "components/header";
+@import "components/home";
+@import "components/boxes";
+@import "components/navbar";
 
 * {
   box-sizing: border-box;
 }
 body {
-  min-height: 100vh;
+  min-height: 160vh;
   a {
     text-decoration: none;
   }
-  padding: 6rem 4rem;
+  padding: 6rem 2rem 6rem 6rem;
 }
