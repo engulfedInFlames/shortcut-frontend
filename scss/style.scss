@@ -1,0 +1,16 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "header";
+@import "home";
+@import "boxes";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  a {
+    text-decoration: none;
+  }
+  padding: 6rem 4rem;
+}
