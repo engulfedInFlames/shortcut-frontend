@@ -6,10 +6,10 @@ html(lang='en', data-theme='light')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         link(rel="stylesheet" href="/stylesheets/style.css")
         title Shorcut
-    body#body-pd
+    body#body-pd.bg-light
         include components/header
-        include components/navbar
-        block content
+        .main.height-100
+            block content
 
         include components/footer
 

@@ -1,11 +1,13 @@
-header.shadow-sm(role='banner')
+
+header#header.header
     .header__left
-        a(href='/') 
-            span Shortcut
+        .header_toggle
+            i#header-toggle.bi.bi-list
+        .header_img
+            img(src="https://i.imgur.com/hczKIze.jpg", alt="")
     .header__right
         form(method="post" action="#")
             input.form-control.border.border-end-0.rounded-pill#example-search-input(type="text")
-        
         div
             .video-upload.hover-overlay 
                 button(type="button")
@@ -24,3 +26,26 @@ header.shadow-sm(role='banner')
                         a.dropdown-item(href="#") 내 정보
                     li
                         a.dropdown-item(href="#") 설정
+#nav-bar.l-navbar
+    nav.nav
+        div
+            a.nav_logo(href="/")
+                i.bi.bi-scissors.nav_logo-icon
+                span.nav_logo-name Shortcut
+            div.nav_list
+                a.nav_link.active(href="#")
+                    i.bi.bi-house-fill.nav_icon
+                    span.nav_name 홈
+                a.nav_link(href="#")
+                    i.bi.bi-arrow-through-heart-fill.nav_icon
+                    span.nav_name 좋아요
+                a.nav_link(href="#")
+                    i.bi.bi-collection-play.nav_icon
+                    span.nav_name 보관함
+                a.nav_link(href="#")
+                    i.bi.bi-exclamation-diamond-fill.nav_icon
+                    span.nav_name 신고하기
+        a.nav_link(href="#")
+            i.bi.bi-0-circle.nav_icon
+            span.nav_name Placeholder
+    
