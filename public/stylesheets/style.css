@@ -1,0 +1,23 @@
+/* 공통 */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* 김경수 */
+
+/* 윤준열 */
