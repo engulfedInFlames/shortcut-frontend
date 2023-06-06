@@ -15326,17 +15326,6 @@ a {
   .body-pd {
     padding-left: calc(var(--nav-width) + 188px); } }
 
-hr {
-  margin-bottom: 50px; }
-
-img.avatar {
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin-left: 50px; }
-
-* {
 .header__right {
   display: flex;
   align-items: center; }
@@ -15388,6 +15377,16 @@ img.avatar {
         transform: scale(0.9); }
       .header__right div .dropdown .dropdown-menu li {
         font-size: 1.25rem; }
+
+hr {
+  margin-bottom: 50px; }
+
+img.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-left: 50px; }
 
 *,
 ::before,
