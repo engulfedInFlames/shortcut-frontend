@@ -10,7 +10,7 @@ header#header.header
             input.form-control.border.border-end-0.rounded-pill#example-search-input(type="text")
         div
             .video-upload.hover-overlay 
-                button(type="button")
+                a.video-upload-btn(type="button", href="/upload/")
                     i.bi.bi-box-arrow-in-down
             .dropdown
                 button.border.d-flex.align-items-center.shadow-sm#dropdownMenuButton(type="button" data-bs-toggle="dropdown" aria-expanded="false" alt="Avatar")
@@ -33,16 +33,16 @@ header#header.header
                 i.bi.bi-scissors.nav_logo-icon
                 span.nav_logo-name Shortcut
             div.nav_list
-                a.nav_link.active(href="#")
+                a.nav_link.active(href="/")
                     i.bi.bi-house-fill.nav_icon
                     span.nav_name 홈
                 a.nav_link(href="#")
                     i.bi.bi-arrow-through-heart-fill.nav_icon
                     span.nav_name 좋아요
-                a.nav_link(href="#")
+                a.nav_link(href="/playlists/@me/")
                     i.bi.bi-collection-play.nav_icon
                     span.nav_name 보관함
-                a.nav_link(href="#")
+                a.nav_link(href="/report/")
                     i.bi.bi-exclamation-diamond-fill.nav_icon
                     span.nav_name 신고하기
         a.nav_link(href="#")

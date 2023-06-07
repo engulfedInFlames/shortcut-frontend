@@ -3,7 +3,7 @@ import path from "path";
 import morgan from "morgan";
 import indexRouter from "./routes";
 import userRouter from "./routes/user";
-import videoRouter from "./routes/video";
+import playlistRouter from "./routes/playlist";
 
 const PORT = 4000;
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", userRouter);
-app.use("/videos", videoRouter);
+app.use("/playlists", playlistRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

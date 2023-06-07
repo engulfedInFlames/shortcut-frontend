@@ -1,0 +1,89 @@
+extends ../layout
+
+block content
+    .playlist-container.rounded.shadow
+        h1.shadow-sm=`${username}의 보관함`
+        div
+            .profile
+                .row.d-flex.justify-content-center.align-items-center.h-100
+                    .card.shadow(style="border-radius: 15px;")
+                        .card-body.text-center
+                            .mt-3.mb-4
+                                img.rounded-circle.img-fluid(src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava2-bg.webp", style="width: 100px;")
+                            h4.mb-2 engulfedInFlames
+                            p.text-muted.mb-4 @TikTokCreator
+                                span.mx-2 |
+                                a(href="#!") ChannelName
+                            button.btn.btn-primary.btn-rounded.btn-lg(type="button")
+                                | Consult now
+                            .d-flex.justify-content-between.text-center.mt-5.mb-2
+                                div
+                                    p.mb-2.h5 8471
+                                    p.text-muted.mb-0 
+                                    | 구독자 수
+                                .px-3
+                                    p.mb-2.h5 8512
+                                    p.text-muted.mb-0 
+                                    | 컨설팅 횟수
+                                div
+                                    p.mb-2.h5 4751
+                                    p.text-muted.mb-0 
+                                    | 만족도
+
+            .rounded
+                .playlist__left
+                    a.btn.btn-outline-dark.playlist.round-trapezoid.shadow(href="#") 전체
+                    a.btn.btn-outline-dark.playlist.round-trapezoid.shadow(href="#") 보관함 1
+                    a.btn.btn-outline-dark.playlist.round-trapezoid.shadow(href="#") 보관함 2
+                    a.btn.btn-outline-dark.playlist.round-trapezoid.shadow(href="#") 보관함 3
+                    a.btn.btn-outline-dark.playlist.round-trapezoid.shadow(href="#") 보관함 4
+                    a.btn.btn-outline-dark.playlist.round-trapezoid.shadow(href="#") 보관함 5
+                
+                .playlist__right.shadow
+                    .card
+                        a(href="#")
+                            img.card-img-top(src="https://placehold.co/400x600", alt="...")
+                            .card-body
+                                h5.card-title Card title
+                                span.card-text 조회수 634회
+                                span.card-text 이틀 전
+                                .btns
+                                    a.btn.btn-danger.delete-btn(href="#", data-id="1") 삭제
+                                
+                    .card
+                        a(href="#")
+                            img.card-img-top(src="https://placehold.co/400x600", alt="...")
+                            .card-body
+                                h5.card-title Card title
+                                span.card-text 조회수 634회
+                                span.card-text 이틀 전
+                                .btns
+                                    a.btn.btn-danger.delete-btn(href="#") 삭제
+                    .card
+                        a(href="#")
+                            img.card-img-top(src="https://placehold.co/400x600", alt="...")
+                            .card-body
+                                h5.card-title Card title
+                                span.card-text 조회수 634회
+                                span.card-text 이틀 전
+                                .btns
+                                    a.btn.btn-danger.delete-btn(href="#") 삭제
+                    .card
+                        a(href="#")
+                            img.card-img-top(src="https://placehold.co/400x600", alt="...")
+                            .card-body
+                                h5.card-title Card title
+                                span.card-text 조회수 634회
+                                span.card-text 이틀 전
+                                .btns
+                                    a.btn.btn-danger.delete-btn(href="#") 삭제
+                    .card
+                        a(href="#")
+                            img.card-img-top(src="https://placehold.co/400x600", alt="...")
+                            .card-body
+                                h5.card-title Card title
+                                span.card-text 조회수 634회
+                                span.card-text 이틀 전
+                                .btns
+                                    a.btn.btn-danger.delete-btn(href="#") 삭제
+    script(src="/javascripts/playlist.js")

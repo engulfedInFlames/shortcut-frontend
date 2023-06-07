@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    #report
+        hgroup
+            h1.display-3 신고하기
+            p.display-6 오류 발견하시면 신고 부탁드립니다.😀
+
+        form#report-form.pt-4(method="post", action="#",enctype="multipart/form-data" )
+            .image-file-drop-area.mb-4
+                span#choose-image-file 이미지 선택
+                span#image-file-message 또는 이미지를 드래그
+                input#image-file-input(type="file" multiple)
+            .form-group.mb-3
+                label.form-label(for="report-form__title")
+                    h5 제목
+                input#report-form__title.form-control(type="text", placeholder="제목을 입력하세요")
+            .form-group.mb-3
+                label.form-label(for="report-form__text")
+                    h5 내용
+                textarea#report-form__text.form-control(rows="3", placeholder="신고할 내용을 입력하세요")
+            .btns
+                button.btn.btn-dark(type="submit") 신고하기
+
+
+
+    script(src="/javascripts/report.js")
