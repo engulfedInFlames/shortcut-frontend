@@ -15392,6 +15392,16 @@ a {
   .body-pd {
     padding-left: calc(var(--nav-width) + 188px); } }
 
+hr {
+  margin-bottom: 50px; }
+
+img.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-left: 50px; }
+
 * {
   box-sizing: border-box; }
 
