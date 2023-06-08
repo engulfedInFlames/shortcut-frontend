@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+    .profile-header
+        h1 프로필 수정
+
+    hr
+    .profile-update-container
+        .input-group.mb-3
+            .table-name 프로필 사진
+            .avator-section
+                img.avatar(src="/images/user_default_image.jpeg", alt="avatar")
+                .row.g-3
+                    .col-auto
+                        input#formFile.form-control(type='file')
+                    .col-auto
+                        button#delete-avatar.img-delete-btn.btn.btn-danger 삭제
+    
+    hr
+    .profile-update-container
+        .input-group.mb-3
+            .table-name 별명
+            .section
+                .input-group.mb-3
+                    input.form-control(type='text' placeholder="username" aria-label="username" aria-describedby='button-addon2')
+                    button#button-addon2.btn.btn-outline-secondary(type='button') 중복 확인
+        .input-group.mb-3
+            .table-name 소개
+            .section
+                .input-group.mb-3
+                    textarea#introduction.form-control()
+        .input-group.mb-3
+            .table-name 태그
+            .section
+                .input-group.mb-3
+                    input.form-control(type='text')
+
+
+
+    .submit-buttons
+        button.edit-button.btn.btn-primary 수정
+        button.cancel-button.btn.btn-danger 취소
