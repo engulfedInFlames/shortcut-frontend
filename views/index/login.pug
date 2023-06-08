@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    form#login-form
+        hgroup.mb-5
+            h1.display-5.fw-normal 로그인
+        .form-floating
+            input#floatingInput.form-control.mb-1(type="email", placeholder="name@example.com")
+            label(for="floatingInput") 이메일
+        .form-floating
+            input#floatingPassword.form-control.mb-3(type="password", placeholder="Password")
+            label(for="floatingPassword") 비밀번호
+        .form-check.text-start.my-3
+            input#flexCheckDefault.form-check-input(type="checkbox", value="remember-me")
+            label.form-check-label(for="flexCheckDefault")
+                | Remember me
+        button.btn.btn-primary.w-100.py-2.mt-4.mb-2.shadow-sm(type="submit")
+            | 로그인
+        
+        hr
+
+        .social-btns.mt-2
+            button.btn.kakao-btn.py-2.mb-2.w-100.shadow-sm(type='button') Login with Kakao
+            button.btn.github-btn.py-2.mb-2.w-100.shadow-sm(type='button') Login with GitHub
+            button.btn.google-btn.py-2.mb-2.w-100.shadow-sm(type='button') Login with Google
+
+    script(src="/javascripts/views/login.js")

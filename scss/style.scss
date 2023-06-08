@@ -8,11 +8,27 @@
 @import "views/playlist";
 @import "views/report";
 @import "views/upload";
+@import "views/login";
+@import "views/signup";
 
 *,
 ::before,
 ::after {
   box-sizing: border-box;
+}
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+  &::-webkit-scrollbar {
+    width: 1rem;
+    // background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--first-color);
+  }
+  // &::-webkit-scrollbar-track {
+  //   background-color: transparent;
+  // }
 }
 
 a {

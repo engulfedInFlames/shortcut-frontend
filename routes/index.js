@@ -11,7 +11,7 @@ const getHome = (req, res) => {
 
 const getReport = (req, res) => {
   try {
-    return res.render("report");
+    return res.render("index/report");
   } catch (e) {
     console.log(e);
   }
@@ -19,7 +19,23 @@ const getReport = (req, res) => {
 
 const getUpload = (req, res) => {
   try {
-    return res.render("upload");
+    return res.render("index/upload");
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getLogin = (req, res) => {
+  try {
+    return res.render("index/login");
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+const getSignup = (req, res) => {
+  try {
+    return res.render("index/signup");
   } catch (e) {
     console.log(e);
   }
@@ -28,5 +44,7 @@ const getUpload = (req, res) => {
 indexRouter.get("/", getHome);
 indexRouter.get("/report", getReport);
 indexRouter.get("/upload", getUpload);
+indexRouter.get("/login", getLogin);
+indexRouter.get("/signup", getSignup);
 
 export default indexRouter;

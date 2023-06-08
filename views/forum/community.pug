@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+    .row.justify-content-center.align-items-center
+        .col-md-8
+          h1.forum-title engulfedInFlames의 포럼
+          // Post List
+          ul.post-list.list-group.mt-4
+            li.list-group-item.d-flex.justify-content-between.align-items-center
+                span.post-number 100
+                span.post-title Hello World!
+                span.post-author Author
+                span.post-date 2023-06-08
+            li.list-group-item.d-flex.justify-content-between.align-items-center
+                span.post-number 101
+                span.post-title Hello World!
+                span.post-author Author
+                span.post-date 2023-06-08
+            //- each post in posts
+            //-   li.list-group-item.d-flex.justify-content-between.align-items-center
+            //-     span.post-number #{post.number}
+            //-     span.post-title #{post.title}
+            //-     span.post-author #{post.author}
+            //-     span.post-date #{post.date}
+
+          // Pagination
+          div(aria-label='Page navigation')
+            ul.pagination.justify-content-center.mt-4
+              li.page-item.disabled
+                a.page-link(href='#', tabindex='-1', aria-disabled='true') Previous
+              li.page-item.active
+                a.page-link(href='#') 1
+              li.page-item
+                a.page-link(href='#') 2
+              li.page-item
+                a.page-link(href='#') 3
+              li.page-item
+                a.page-link(href='#') Next
+
+    script(src="/javascripts/views/playlist.js")
