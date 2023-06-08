@@ -1,9 +1,28 @@
 extends ../layout
 
 block content
-    h3 프로필 페이지
-    button(type="button") 수정
-    button 회원 탈퇴
+    .profile-header
+        h1 프로필 페이지
+        .buttons
+            button.edit-button.btn.btn-primary 수정
+            button.cancel-button.btn.btn-danger 회원 탈퇴
     hr
-    div
-        img.avatar(src="/images/user_default_image.jpeg", alt="")
+    .profile-container
+        .avator-section
+            img.avatar(src="/images/user_default_image.jpeg", alt="avatar")
+            .username 유저네임
+            .email user@email.com
+        .introduction-section.card.card-body(style="hight: 100px")
+            p 안녕하세요
+    .tag-header
+        h3 관심있는 태그
+    hr
+    .tag-container 
+        .tag #태그, #쇼츠, #인기급상승
+
+    .consulting-header
+        h3 컨설팅 대시보드
+        .buttons
+            button.consulting-button.btn.btn-primary 신청
+    hr
+

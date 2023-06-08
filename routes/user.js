@@ -9,8 +9,17 @@ const getMe = (req, res, next) => {
     return res.send("Something Wrong!");
   }
 };
+const getMeUpdate = (req, res, next) => {
+  try {
+    return res.render("users/me-update");
+  } catch (e) {
+    console.log(e);
+    return res.send("Something Wrong!");
+  }
+};
 
 userRouter.get("/me", getMe);
+userRouter.get("/me/update", getMeUpdate);
 
 ////////////////////////////////////////////////
 // 이하는 파라미터를 사용한 url 설정 예시입니다. //
