@@ -1,75 +1,13 @@
-extends layout
+extends ../layout
+include ../mixins
 
 block content      
-  .container-fluid.bg-dark.py-5.rounded
+  .container-fluid.bg-dark.py-5
     .row
       .col-md-12
         h2.text-center.text-white.py-4 지금 핫한 영상
-
-        .carousel.slide(data-bs-ride='carousel', id='videoCarousel')
-          .carousel-inner
-            .carousel-item.active
-              .carousel-row.row.d-flex.justify-content-center
-                .col-md-4
-                  .card.bg-dark
-                    div.embed-responsive.embed-responsive-16by9
-                      //- Placeholder for YouTube video
-                      div.embed-responsive-item#player1
-                    .player-info
-                      h5.card-title.text-white Video title1 
-                      p.card-text.text-white Video uploader
-                .col-md-4
-                  .card.bg-dark
-                    div.embed-responsive.embed-responsive-16by9
-                      div.embed-responsive-item#player2
-                    .player-info
-                      h5.card-title.text-white Video title2 
-                      p.card-text.text-white Video uploader
-                //- each video in videos.slice(0, 3)
-
-            .carousel-item
-              .carousel-row.row.d-flex.justify-content-center
-                .col-md-4
-                  .card.bg-dark
-                    div.embed-responsive.embed-responsive-16by9
-                      div.embed-responsive-item#player3
-                    .player-info
-                      h5.card-title.text-white Video title3
-                      p.card-text.text-white Video uploader
-                .col-md-4
-                  .card.bg-dark
-                    div.embed-responsive.embed-responsive-16by9
-                      div.embed-responsive-item#player4
-                    .player-info
-                      h5.card-title.text-white Video title4
-                      p.card-text.text-white Video uploader
-                //- each video in videos.slice(3, 6)
-
-            .carousel-item
-              .carousel-row.row.d-flex.justify-content-center
-                .col-md-4
-                  .card.bg-dark
-                    div.embed-responsive.embed-responsive-16by9
-                      div.embed-responsive-item#player5
-                    .player-info
-                      h5.card-title.text-white Video title5
-                      p.card-text.text-white Video uploader
-                .col-md-4
-                  .card.bg-dark
-                    div.embed-responsive.embed-responsive-16by9
-                      div.embed-responsive-item#player6
-                    .player-info
-                      h5.card-title.text-white Video title6
-                      p.card-text.text-white Video uploader
-                //- each video in videos.slice(6, 9)
-
-          a.carousel-control-prev(href='#videoCarousel', role='button', data-bs-slide='prev')
-            span.carousel-control-prev-icon(aria-hidden='true')
-            span.visually-hidden Previous
-
-          a.carousel-control-next(href='#videoCarousel', role='button', data-bs-slide='next')
-            span.carousel-control-next-icon(aria-hidden='true')
-            span.visually-hidden Next
+        +Carousel(3, 0)
+          //- each video in videos.slice(6, 9)
 
   .container.mt-5.forum-generator
     .row
@@ -109,14 +47,14 @@ block content
               | 브론즈 채널 목록
           #collapseFour.accordion-collapse.collapse(aria-labelledby="headingFour", data-bs-parent="#indexAccordion")
             .accordion-body.index-accordion-body
-              a.badge.bg-secondary.mx-1(href="/forum/@freecodecamp/community") @freecodecamp
-              a.badge.bg-secondary.mx-1(href="/forum/@javascriptmastery/community") @javascriptmastery
+              a.badge.bg-secondary.mx-1(href="/forum/@freecodecamp/consortium") @freecodecamp
+              a.badge.bg-secondary.mx-1(href="/forum/@javascriptmastery/consortium") @javascriptmastery
 
 
   .container.py-5
     .row
       .col-md-6
-        h2 Random Community Post List 1
+        h2 Random Consortium Post List 1
         ul.post-list.list-group
           li.list-group-item.d-flex.justify-content-between.align-items-center
             span.post-number 100
@@ -128,7 +66,7 @@ block content
         //-     li= item
 
       .col-md-6
-        h2 Random Community Post List 2
+        h2 Random Consortium Post List 2
         ul.post-list.list-group
           li.list-group-item.d-flex.justify-content-between.align-items-center
             span.post-number 100
@@ -156,11 +94,11 @@ block content
           small.text-body-secondary 🔸 예상 소요 시간: 3~10분
           button.btn.btn-primary.w-100.px-4.py-3.mt-4.mb-4.shadow-sm(type="submit") 생성하기
 
-          
-    
 
 
 
+
+block scripts
   script(src="/public/javascripts/views/index.js")
 
 

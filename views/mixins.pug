@@ -1,0 +1,49 @@
+
+mixin ForumTabs(channelHandle)
+    #forumTabs.col-md-8
+        - const INSIGHT_URL = "/forum/" + CH + "/insight"
+        - const CONSORTIUM_URL= "/forum/" + CH + "/consortium"
+        - const COLLOQUIUM_URL = "/forum/" + CH +"/colloquium"
+
+        ul.nav.nav-tabs
+            li.nav-item
+                a#insightTab.nav-link(href=INSIGHT_URL) 인사이트
+            li.nav-item
+                a#consortiumTab.nav-link(href=CONSORTIUM_URL) 컨소시엄
+            li.nav-item
+                a#colloquiumTab.nav-link(href=COLLOQUIUM_URL) 콜로키움
+
+mixin PostItem(post)
+    li.list-group-item.d-flex.justify-content-between.align-items-center
+        span.post-number #{post.number}
+        span.post-title #{post.title}
+        span.post-author #{post.author}
+        span.post-date #{post.date}
+
+mixin CarouselCard(id)
+    .col-md-4
+        .card.bg-dark.overflow-hidden.h-100.rounded
+            div.embed-responsive.embed-responsive-16by9
+                div.embed-responsive-item.position-relative(id="player"+id)
+            .player-info.position-absolute
+                h5.card-title.text-white Video title #{id}
+                p.card-text.text-white Video uploader
+
+mixin Carousel(count, videos=0)
+    - const INDEX_LIST = Array.from(Array(count).keys())
+    .carousel#videoCarousel.slide(data-bs-ride='carousel')
+        .carousel-inner
+            each i, index in INDEX_LIST
+                .carousel-item(class=index===0?"active":"")
+                    .carousel-row.row.d-flex.justify-content-center.align-items-center
+                        each j in [2*(i+1)-1,2*(i+1)]
+                            +CarouselCard(j)
+        a.carousel-control-prev(href='#videoCarousel', role='button', data-bs-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.visually-hidden Previous
+
+        a.carousel-control-next(href='#videoCarousel', role='button', data-bs-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.visually-hidden Next
+
+

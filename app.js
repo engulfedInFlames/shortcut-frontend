@@ -5,6 +5,8 @@ import indexRouter from "./routes";
 import userRouter from "./routes/user";
 import ForumRouter from "./routes/forum";
 
+require = require("esm")(module);
+
 const PORT = 4000;
 
 const app = express();
@@ -12,7 +14,6 @@ const app = express();
 const createError = require("http-errors");
 const cookieParser = require("cookie-parser");
 const logger = morgan("dev");
-const bootstrapRouter = express.Router();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

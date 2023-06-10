@@ -9,17 +9,16 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.14",
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "esm": "^3.2.25",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-sass": "^9.0.0",
-    "pug": "^3.0.2",
-    "youtube-player": "^5.6.0"
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",
@@ -29,6 +28,7 @@
   },
   "description": "- `npm init` => venv + [requirements.txt]\r - `npm init -y`\r - `npm install` - node_modules = venv\r - `npm i`",
   "main": "app.js",
+  "module": "main.js",
   "author": "",
   "license": "ISC"
 }

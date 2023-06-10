@@ -1,16 +1,16 @@
 extends ../layout
 
 block content
-    #report
+    #report.mx-auto
         hgroup
             h1.display-3 신고하기
             p.display-6 오류 발견하시면 신고 부탁드립니다.😀
 
         form#report-form.pt-4(method="post", action="#",enctype="multipart/form-data" )
-            .image-file-drop-area.mb-4
+            .image-file-drop-area.mb-4.d-flex.justify-content-center.align-items-center.position-relative.rounded
                 span#choose-image-file 이미지 선택
-                span#image-file-message 또는 이미지를 드래그
-                input#image-file-input(type="file" multiple)
+                span#image-file-message.overflow-hidden 또는 이미지를 드래그
+                input#image-file-input.position-absolute.w-100.h-100(type="file" multiple)
             .form-group.mb-3
                 label.form-label(for="report-form__title")
                     h5 제목
@@ -19,9 +19,9 @@ block content
                 label.form-label(for="report-form__text")
                     h5 내용
                 textarea#report-form__text.form-control(rows="3", placeholder="신고할 내용을 입력하세요")
-            .report-btns
+            .report-btns.d-flex.justify-content-end
                 button.btn.btn-dark(type="submit") 신고하기
 
 
-
+block scripts
     script(src="/public/javascripts/views/report.js")

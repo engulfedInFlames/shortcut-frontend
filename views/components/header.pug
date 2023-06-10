@@ -20,14 +20,14 @@ header
             form.d-flex(role="search")
                 input.form-control.me-2.rounded-pill(name="search" type="search", placeholder="Search", aria-label="Search")
                 button.d-none(type="submit") Search
-            div.profile-btn
-                .video-upload.hover-overlay 
-                    a.video-upload-btn(type="button", href="/upload/")
+            div.profile-btn.d-flex.justify-content-between.align-items-center.ms-4
+                .video-upload.hover-overlay.d-flex.justify-content-center.align-items-center
+                    a.video-upload-btn.text-white(type="button", href="/upload")
                         i.bi.bi-box-arrow-in-down
-                .dropdown
-                    button.border.d-flex.align-items-center.shadow-sm#dropdownMenuButton(type="button" data-bs-toggle="dropdown" aria-expanded="false" alt="Avatar")
-                        i.bi.bi-list
-                        div.rounded-circle
+                .dropdown.ms-4
+                    button.border.d-flex.justify-content-between.align-items-center.bg-white.px-3.rounded-pill.ms-0.shadow-sm#dropdownMenuButton(type="button" data-bs-toggle="dropdown" aria-expanded="false" alt="Avatar")
+                        i.bi.bi-list.fw-bold
+                        div.rounded-circle.d-flex.justify-content-center.align-items-center.bg-primary
                             i.bi.bi-person-fill
                     ul.dropdown-menu.mx-0.shadow(aria-labelledby="dropdownMenuButton")
                         li
@@ -60,4 +60,9 @@ header
                     small.text-body-secondary 🔸등록된 이메일과 비밀번호를 입력하고 로그인 버튼을 클릭하세요.
                     button.btn.btn-primary.w-100.px-4.py-3.mt-4.mb-4.shadow-sm(type="submit")
                         | 로그인
+                    hr
+                    .social-btns.mt-2.d-flex.flex-column
+                        button.btn.kakao-btn.py-3.mb-2.w-100.shadow-sm(type='button') Login with Kakao
+                        button.btn.github-btn.py-3.mb-2.w-100.shadow-sm(type='button') Login with GitHub
+                        button.btn.google-btn.py-3.mb-2.w-100.shadow-sm(type='button') Login with Google
 

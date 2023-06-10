@@ -1,15 +1,12 @@
 #report {
   width: 60%;
   max-width: 784px;
-  margin: 0 auto;
   padding-bottom: 4rem;
   #report-form {
     .image-file-drop-area {
-      @include flex-h-center;
       position: relative;
       padding: 4rem;
       border: 2px dashed $primary;
-      border-radius: 3px;
       transition: 0.2s;
       #choose-image-file {
         flex-shrink: 0;
@@ -20,25 +17,17 @@
       #image-file-message {
         font-size: 1rem;
         white-space: nowrap;
-        overflow: hidden;
         text-overflow: ellipsis;
       }
       #image-file-input {
-        position: absolute;
+        cursor: pointer;
         left: 0;
         top: 0;
-        height: 100%;
-        width: 100%;
-        cursor: pointer;
         opacity: 0;
       }
     }
-
     #report-form__text {
       height: 16rem;
-    }
-    .report-btns {
-      @include flex-h-end;
     }
   }
 }

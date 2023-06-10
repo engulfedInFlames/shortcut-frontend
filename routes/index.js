@@ -3,7 +3,7 @@ const indexRouter = express.Router();
 
 const getHome = (req, res) => {
   try {
-    return res.render("index");
+    return res.render("index/index");
   } catch (e) {
     console.log(e);
   }

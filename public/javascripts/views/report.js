@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  console.log("report!");
-
   // Image Upload
   const ImagefileInput = document.getElementById("image-file-input");
 

@@ -1,4 +1,5 @@
 $primary: #222529;
+$seconary: #3c4856;
 $custom-red: #ea3322;
 $danger: $custom-red;
 
@@ -7,10 +8,8 @@ $danger: $custom-red;
 @import "_mixins";
 @import "components/header";
 @import "components/me";
-@import "views/community";
 @import "views/report";
 @import "views/upload";
-@import "views/login";
 @import "views/signup";
 @import "views/index";
 

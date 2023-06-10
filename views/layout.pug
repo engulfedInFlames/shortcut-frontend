@@ -10,7 +10,10 @@ html(lang='en', data-theme='light')
         include components/header
         main.container.p-5
             block content
+        block modal
         include components/footer
 
     script(src="/bootstrap/js/bootstrap.bundle.min.js")
-    script(src="/public/javascripts/views/navbar.js")
+    script(src="/public/javascripts/views/header.js")
+    block scripts
+        

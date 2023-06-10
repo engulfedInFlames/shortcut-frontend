@@ -1,17 +1,9 @@
 .carousel-row {
-  @include flex-h-between;
   .col-md-4 {
     width: 480px;
     aspect-ratio: calc(16 / 9);
     .card {
-      overflow: hidden;
-      height: 100%;
-      border-radius: 0.5rem;
-      .embed-responsive-item {
-        position: relative;
-      }
       .player-info {
-        position: absolute;
         left: 1rem;
         bottom: 2rem;
       }
