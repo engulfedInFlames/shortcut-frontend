@@ -12,6 +12,7 @@ const app = express();
 const createError = require("http-errors");
 const cookieParser = require("cookie-parser");
 const logger = morgan("dev");
+const bootstrapRouter = express.Router();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -21,7 +22,11 @@ app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "public")));
+app.use("/public", express.static(path.join(__dirname, "public")));
+app.use(
+  "/bootstrap",
+  express.static(path.join(__dirname, "node_modules/bootstrap/dist"))
+);
 
 app.use("/", indexRouter);
 app.use("/users", userRouter);

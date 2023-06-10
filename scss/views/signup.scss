@@ -10,14 +10,5 @@
   .social-btns {
     @include flex-v-center;
     margin: 0;
-    button {
-      &:nth-child(1) {
-        background-color: #f3e24d;
-      }
-      &:nth-child(2) {
-        color: white;
-        background-color: black;
-      }
-    }
   }
 }

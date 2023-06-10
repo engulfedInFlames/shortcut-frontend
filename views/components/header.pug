@@ -18,7 +18,7 @@ header
                 li.nav-item
                     a.nav-link.disabled Disabled
             form.d-flex(role="search")
-                input.form-control.me-2.rounded-pill(type="search", placeholder="Search", aria-label="Search")
+                input.form-control.me-2.rounded-pill(name="search" type="search", placeholder="Search", aria-label="Search")
                 button.d-none(type="submit") Search
             div.profile-btn
                 .video-upload.hover-overlay 
@@ -31,12 +31,33 @@ header
                             i.bi.bi-person-fill
                     ul.dropdown-menu.mx-0.shadow(aria-labelledby="dropdownMenuButton")
                         li
-                            a.dropdown-item(href='/login') 로그인
+                            a.btn.py-2.dropdown-item(type="button", data-bs-toggle="modal" data-bs-target="#loginModal") 로그인
                         li
-                            a.dropdown-item(href='/signup') 회원가입
+                            a.py-2.dropdown-item(href='/signup') 회원가입
                         li
-                            a.dropdown-item(href="#") 내 정보
+                            a.py-2.dropdown-item(href="#") 내 정보
                         li
-                            a.dropdown-item.dropdown-item-danger(href='#') 로그아웃
+                            a.py-2.dropdown-item.dropdown-item-danger(href='#') 로그아웃
                         
+    #loginModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="loginModalLabel", aria-hidden="true")
+        .modal-dialog(role="document")
+            .modal-content.px-4
+                .modal-header.px-4.py-5.border-bottom-0.d-flex.align-items-center
+                    h1.modal-title 로그인
+                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                .modal-body
+                    form
+                        .form-floating.mb-3
+                            input#floatingInput.form-control.rounded-3(type="email", placeholder="example@domain.com")
+                            label(for="floatingInput") 이메일
+                        .form-floating.mb-3
+                            input#floatingInput.form-control.rounded-3(type="password", placeholder="Password")
+                            label(for="floatingInput") 비밀번호
+                        .form-check.text-start.my-3
+                            input#flexCheckDefault.form-check-input(type="checkbox", value="remember-me")
+                            label.form-check-label(for="flexCheckDefault")
+                                | Remember me
+                    small.text-body-secondary 🔸등록된 이메일과 비밀번호를 입력하고 로그인 버튼을 클릭하세요.
+                    button.btn.btn-primary.w-100.px-4.py-3.mt-4.mb-4.shadow-sm(type="submit")
+                        | 로그인
 

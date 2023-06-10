@@ -1,12 +1,12 @@
 .navbar {
   .navbar-brand {
     span {
-      color: #ea3322;
+      color: $custom-red;
     }
   }
   .navbar-nav {
     i {
-      color: #ea3322;
+      color: $custom-red;
       margin-left: 0.25rem;
     }
   }
@@ -66,7 +66,10 @@
       .dropdown-menu {
         left: -3.5rem;
         li {
-          font-size: 1.25rem;
+          button,
+          a {
+            font-size: 1.25rem;
+          }
         }
       }
     }
@@ -74,25 +77,23 @@
 }
 
 .dropdown-item-danger {
-  color: var(--bs-red);
-}
-.dropdown-item-danger:hover,
-.dropdown-item-danger:focus {
-  color: #fff;
-  background-color: var(--bs-red);
-}
-.dropdown-item-danger.active {
-  background-color: var(--bs-red);
+  color: $custom-red;
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: $custom-red;
+  }
 }
 
 .btn-hover-light {
   color: var(--bs-body-color);
   background-color: var(--bs-body-bg);
-}
-.btn-hover-light:hover,
-.btn-hover-light:focus {
-  color: var(--bs-link-hover-color);
-  background-color: var(--bs-tertiary-bg);
+  &:hover,
+  &:focus {
+    color: var(--bs-link-hover-color);
+    background-color: var(--bs-tertiary-bg);
+  }
 }
 
 .cal-month,
@@ -143,4 +144,7 @@
 
 .opacity-10 {
   opacity: 0.1;
+}
+header {
+  user-select: none;
 }

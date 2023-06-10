@@ -1,15 +1,18 @@
+$primary: #222529;
+$custom-red: #ea3322;
+$danger: $custom-red;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "bootstrap-icons";
-@import "_vars";
 @import "_mixins";
 @import "components/header";
-@import "components/home";
 @import "components/me";
-@import "views/playlist";
+@import "views/community";
 @import "views/report";
 @import "views/upload";
 @import "views/login";
 @import "views/signup";
+@import "views/index";
 
 *,
 ::before,
@@ -20,15 +23,15 @@ body {
   min-height: 75rem;
   padding-top: 4.5rem;
   &::-webkit-scrollbar {
-    width: 1rem;
-    // background-color: transparent;
+    width: 0.4rem;
+    background-color: transparent;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--first-color);
+    background-color: $primary;
   }
-  // &::-webkit-scrollbar-track {
-  //   background-color: transparent;
-  // }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 a {
@@ -36,6 +39,6 @@ a {
   text-decoration: none;
 }
 
-.main {
-  padding-top: 2rem;
+main {
+  min-height: 80vh;
 }

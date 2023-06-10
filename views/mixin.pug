@@ -4,3 +4,11 @@ mixin PostItem(post)
         span.post-title #{post.title}
         span.post-author #{post.author}
         span.post-date #{post.date}
+
+mixin CarouselCard(video)
+    .card
+        .ratio.ratio-1x73
+            img.card-img-top(src=video.thumbnail, alt=video.title)
+            .card-img-overlay.d-flex.flex-column.justify-content-end
+                h5.card-title.text-white #{video.title}
+                p.card-text.text-white #{video.uploader}
