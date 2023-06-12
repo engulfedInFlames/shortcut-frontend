@@ -9,7 +9,7 @@
   "scripts": {
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|bas'",
     "dev": "nodemon --exec babel-node app.js",
-    "start": "./node_modules/pm2/bin/pm2 start ./bin/www --interpreter babel-node --watch ",
+    "start": "./node_modules/pm2/bin/pm2 start ./bin/www --interpreter ./node_modules/@babel/node/bin/babel-node.js --watch ",
     "stop": "./node_modules/pm2/bin/pm2 stop ./bin/www",
     "delete": "./node_modules/pm2/bin/pm2 delete ./bin/www",
     "list": "./node_modules/pm2/bin/pm2 list",

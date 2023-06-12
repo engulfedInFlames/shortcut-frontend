@@ -225,6 +225,41 @@ Application yourfan-frontend has been created.
 },
 ```
 
+## 🛠️ 트러블 슈팅 1 : 502 Bad Gateway
+
+### 포트 바인딩
+
+&ensp; AWS에서 호스팅한 도메인으로 접속하니 502 오류가 발생했습니다. 검색 결과, EB는 기본적으로 5000번 포트를 NGINX와 바인딩한다고 합니다. 저는 4000번을 포트 번호로 설정해놨기 때문에, 5000번으로 변경해줬습니다. 추가로 AWS 콘솔로 가서 EB의 *Configuration*에 환경 변수 SERVER_PORT라는 키를 생성하고, 여기에도 5000을 할당했습니다.
+
+&ensp; 그럼에도 502 오류는 해결되지 않았습니다. `eb logs` 명령어를 실행해서 로그를 확인하니 다음을 확인할 수 있었습니다.
+
+```zsh
+2023/06/12 13:35:18 [error] 8175#8175: *2322 connect() failed (111: Connection refused) while connecting to upstream, client: 172.31.8.80, server: , request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:8080/", host: "172.31.11.187"
+```
+
+&ensp; 업스트림이 5000번 포트에서가 아닌 8080번 포트에서 시작되는 것으로 설정되어 있었습니다. 그러므로, *app.js*에서 포트 번호를 다시 8080으로 변경해줘야 할 것 같습니다.
+
+&ensp; 또 눈에 띈 것은 다음의 로그입니다.
+
+### 바벨
+
+```zsh
+Jun 12 11:19:36 ip-172-31-11-187 web: [PM2][ERROR] Interpreter babel-node is NOT AVAILABLE in PATH. (type 'which babel-node' to double check.)
+```
+
+&ensp; 개발 환경에서는 문제가 없었는데, 배포 환경에서는 `babel-node`의 실행 경로를 찾지 못하고 있는 것 같습니다. 그래서 `babel-node`의 경로도 명시해보겠습니다..
+
+```js
+...
+"scripts": {
+  "start": "./node_modules/pm2/bin/pm2 start ./bin/www --interpreter ./node_modules/@babel/node/bin/babel-node.js --watch ", // 변경 전 | "./node_modules/pm2/bin/pm2 start ./bin/www --interpreter babel-node --watch"
+  ...
+},
+...
+```
+
+&ensp;
+
 **출처**
 
 [Deploying an Express application to Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs_express.html)
