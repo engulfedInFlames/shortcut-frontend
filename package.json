@@ -1,12 +1,19 @@
 {
-  "name": "shortcut-frontend",
-  "version": "0.0.0",
+  "name": "yourfan-frontend",
+  "version": "0.0.1",
   "private": true,
+  "engines": {
+    "npm": "9.6.7",
+    "node": "18.16.0"
+  },
   "scripts": {
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|bas'",
     "dev": "nodemon --exec babel-node app.js",
-    "scss": "node-sass -w ./scss/style.scss ./public/stylesheets/style.css",
-    "start": "node ./bin/www"
+    "start": "./node_modules/pm2/bin/pm2 start ./bin/www --interpreter babel-node --watch ",
+    "stop": "./node_modules/pm2/bin/pm2 stop ./bin/www",
+    "delete": "./node_modules/pm2/bin/pm2 delete ./bin/www",
+    "list": "./node_modules/pm2/bin/pm2 list",
+    "scss": "node-sass -w ./scss/style.scss ./public/stylesheets/style.css"
   },
   "dependencies": {
     "bootstrap": "^5.3.0",
@@ -18,6 +25,7 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "node-sass": "^9.0.0",
+    "pm2": "^5.3.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
@@ -26,9 +34,8 @@
     "@babel/preset-env": "^7.22.4",
     "nodemon": "^2.0.22"
   },
-  "description": "- `npm init` => venv + [requirements.txt]\r - `npm init -y`\r - `npm install` - node_modules = venv\r - `npm i`",
+  "description": "",
   "main": "app.js",
-  "module": "main.js",
   "author": "",
-  "license": "ISC"
+  "license": ""
 }
