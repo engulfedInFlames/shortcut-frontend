@@ -7,7 +7,7 @@ import ForumRouter from "./routes/forum";
 
 require = require("esm")(module);
 
-const PORT = 4000;
+const PORT = 8080;
 
 const app = express();
 

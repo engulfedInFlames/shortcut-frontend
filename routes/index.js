@@ -25,14 +25,6 @@ const getUpload = (req, res) => {
   }
 };
 
-const getLogin = (req, res) => {
-  try {
-    return res.render("index/login");
-  } catch (e) {
-    console.log(e);
-  }
-};
-
 const getSignup = (req, res) => {
   try {
     return res.render("index/signup");
@@ -44,7 +36,6 @@ const getSignup = (req, res) => {
 indexRouter.get("/", getHome);
 indexRouter.get("/report", getReport);
 indexRouter.get("/upload", getUpload);
-indexRouter.get("/login", getLogin);
 indexRouter.get("/signup", getSignup);
 
 export default indexRouter;
