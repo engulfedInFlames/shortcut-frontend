@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+    form#signup-form.mx-auto
+        hgroup.mb-5
+            h1.display-5.fw-normal 회원가입
+        .form-group.mb-3
+            label.form-label 이메일
+            .input-group
+                input.form-control(type="email", name="email", aria-describedby="button-addon2")
+                button#button-addon2.btn.btn-outline-secondary(type="button") 인증
+        
+        .form-group.mb-3
+            lable.from-label 이메일 인증 코드
+            input.form-control(type="text", name="email-code")
+        .password-group.d-grid
+            .form-group.mb-3
+                label.form-label 비밀번호
+                input.form-control(type="password", name="password")
+            .form-group.mb-3
+                label.form-label 비밀번호 확인
+                input.form-control(type="password", name="password2")
+            
+        .form-group.mb-3
+            label.form-label 닉네임
+            input.form-control(type="text", name="nickname")
+        .form-check.text-start.my-3
+            input#flexCheckDefault.form-check-input(type="checkbox", value="check-box")
+            label.form-check-label(for="flexCheckDefault")
+                | Check Box
+        button.btn.btn-primary.w-100.py-2.mt-4.mb-2.shadow-sm(type="submit")
+            | 회원가입
+
+block scripts
+    script.

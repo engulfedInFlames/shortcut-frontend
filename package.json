@@ -8,11 +8,12 @@
   },
   "scripts": {
     "babel-node": "babel-node --presets='@babel/preset-env' --ignore='foo|bar|bas'",
-    "dev": "nodemon --exec babel-node app.js",
-    "start": "./node_modules/pm2/bin/pm2 start ./bin/www --interpreter ./node_modules/@babel/node/bin/babel-node.js --watch ",
+    "dev": "export NODE_ENV=development && nodemon --exec babel-node app.js",
+    "start": "export NODE_ENV=development && ./node_modules/pm2/bin/pm2 start ./bin/www --interpreter babel-node --watch ",
     "stop": "./node_modules/pm2/bin/pm2 stop ./bin/www",
     "delete": "./node_modules/pm2/bin/pm2 delete ./bin/www",
     "list": "./node_modules/pm2/bin/pm2 list",
+    "logs": "./node_modules/pm2/bin/pm2 logs",
     "scss": "node-sass -w ./scss/style.scss ./public/stylesheets/style.css"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "bootstrap-icons": "^1.10.5",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "ejs": "^3.1.9",
     "esm": "^3.2.25",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
@@ -32,7 +34,19 @@
     "@babel/core": "^7.22.1",
     "@babel/node": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
-    "nodemon": "^2.0.22"
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.8.1",
+    "html-webpack-plugin": "^5.5.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "nodemon": "^2.0.22",
+    "pug-plugin": "^4.9.7",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.86.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "description": "",
   "main": "app.js",

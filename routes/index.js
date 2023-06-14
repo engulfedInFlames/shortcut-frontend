@@ -3,7 +3,7 @@ const indexRouter = express.Router();
 
 const getHome = (req, res) => {
   try {
-    return res.render("index/index");
+    return res.render("pages/index");
   } catch (e) {
     console.log(e);
   }
@@ -11,7 +11,7 @@ const getHome = (req, res) => {
 
 const getReport = (req, res) => {
   try {
-    return res.render("index/report");
+    return res.render("pages/report");
   } catch (e) {
     console.log(e);
   }
@@ -19,7 +19,7 @@ const getReport = (req, res) => {
 
 const getUpload = (req, res) => {
   try {
-    return res.render("index/upload");
+    return res.render("pages/upload");
   } catch (e) {
     console.log(e);
   }
@@ -27,7 +27,7 @@ const getUpload = (req, res) => {
 
 const getSignup = (req, res) => {
   try {
-    return res.render("index/signup");
+    return res.render("pages/signup");
   } catch (e) {
     console.log(e);
   }

@@ -25,10 +25,7 @@ mixin CarouselCard(id)
         .card.bg-dark.overflow-hidden.h-100.rounded
             div.embed-responsive.embed-responsive-16by9
                 div.embed-responsive-item.position-relative(id="player"+id)
-            .player-info.position-absolute
-                h5.card-title.text-white Video title #{id}
-                p.card-text.text-white Video uploader
-
+                
 mixin Carousel(count, videos=0)
     - const INDEX_LIST = Array.from(Array(count).keys())
     .carousel#videoCarousel.slide(data-bs-ride='carousel')

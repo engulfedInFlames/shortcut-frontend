@@ -3,7 +3,7 @@ const userRouter = express.Router();
 
 const getMe = (req, res, next) => {
   try {
-    return res.render("users/me");
+    return res.render("pages/me");
   } catch (e) {
     console.log(e);
     return res.send("Something Wrong!");
@@ -11,7 +11,7 @@ const getMe = (req, res, next) => {
 };
 const getMeUpdate = (req, res, next) => {
   try {
-    return res.render("users/me-update");
+    return res.render("pages/me-update");
   } catch (e) {
     console.log(e);
     return res.send("Something Wrong!");

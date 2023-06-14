@@ -3,41 +3,37 @@ $seconary: #3c4856;
 $custom-red: #ea3322;
 $danger: $custom-red;
 
-@import "../node_modules/bootstrap/scss/bootstrap";
-@import "bootstrap-icons";
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/bootstrap-icons";
 @import "_mixins";
 @import "components/header";
 @import "components/me";
 @import "views/report";
-@import "views/upload";
 @import "views/signup";
 @import "views/index";
 
-*,
-::before,
-::after {
+html {
   box-sizing: border-box;
-}
-body {
-  min-height: 75rem;
-  padding-top: 4.5rem;
-  &::-webkit-scrollbar {
-    width: 0.4rem;
-    background-color: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $primary;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: transparent;
-  }
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-main {
-  min-height: 80vh;
+  body {
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    &::-webkit-scrollbar {
+      width: 0.4rem;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $primary;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    main {
+      min-height: 80vh;
+    }
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }

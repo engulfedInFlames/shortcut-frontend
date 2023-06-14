@@ -5,25 +5,37 @@ import indexRouter from "./routes";
 import userRouter from "./routes/user";
 import ForumRouter from "./routes/forum";
 
-require = require("esm")(module);
+console.log(process.env.NODE_ENV);
+// 개발 환경인지 아닌지 확인
+if (process.env.NODE_ENV === "production") {
+  console.log("Production Mode");
+} else if (process.env.NODE_ENV === ("development" | "undefined")) {
+  console.log("Development Mode");
+}
+//
 
-const PORT = 8080;
+const PORT = 5000;
 
 const app = express();
 
 const createError = require("http-errors");
 const cookieParser = require("cookie-parser");
-const logger = morgan("dev");
 
-// view engine setup
-app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "pug");
+if (process.env.NODE_ENV === "production") {
+  app.set("views", path.join(process.cwd(), "dist"));
+  app.set("view engine", "ejs");
+  app.engine("html", require("ejs").renderFile);
+  app.use("/public", express.static(path.join(process.cwd(), "dist/assets")));
+} else if (process.env.NODE_ENV === "development") {
+  app.set("views", path.join(process.cwd(), "views"));
+  app.set("view engine", "pug");
+  app.use(morgan("dev"));
+  app.use("/public", express.static(path.join(process.cwd(), "public")));
+}
 
-app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(
   "/bootstrap",
   express.static(path.join(__dirname, "node_modules/bootstrap/dist"))
@@ -40,11 +52,9 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
-  // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render("error");
 });
@@ -55,4 +65,4 @@ const handleListening = () => {
 
 app.listen(PORT, "127.0.0.1", handleListening);
 
-module.exports = app;
+export default app;

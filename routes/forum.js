@@ -12,7 +12,7 @@ const getInsight = (req, res) => {
     const context = {
       channelHandle: channel,
     };
-    return res.render("forum/insight", context);
+    return res.render("pages/insight", context);
   } catch (e) {
     return res.send("Something Wrong!");
   }
@@ -27,7 +27,7 @@ const getConsortium = (req, res) => {
     const context = {
       channelHandle: channel,
     };
-    return res.render("forum/consortium", context);
+    return res.render("pages/consortium", context);
   } catch (e) {
     return res.send("Something Wrong!");
   }
@@ -42,7 +42,7 @@ const getColloquium = (req, res) => {
     const context = {
       channelHandle: channel,
     };
-    return res.render("forum/colloquium", context);
+    return res.render("pages/colloquium", context);
   } catch (e) {
     return res.send("Something Wrong!");
   }
@@ -57,7 +57,7 @@ const getWrite = (req, res) => {
     const context = {
       channelHandle: channel,
     };
-    return res.render("forum/write", context);
+    return res.render("pages/write", context);
   } catch (e) {
     return res.send("Something Wrong!");
   }
