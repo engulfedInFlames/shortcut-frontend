@@ -1,0 +1,18 @@
+.carousel-row {
+  .col-md-4 {
+    width: 480px;
+    aspect-ratio: calc(16 / 9);
+    .card {
+      .player-info {
+        left: 1rem;
+        bottom: 2rem;
+      }
+    }
+  }
+}
+.forum-generator {
+  button {
+    width: 260px;
+    font-size: 1.25rem;
+  }
+}

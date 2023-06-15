@@ -1,0 +1,8 @@
+#signup-form {
+  max-width: 440px;
+  padding: 1rem;
+  .password-group {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}

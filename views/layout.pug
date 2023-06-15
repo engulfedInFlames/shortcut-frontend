@@ -4,14 +4,15 @@ html(lang='en', data-theme='light')
         meta(charset='UTF-8')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css")
-        link(rel="stylesheet", href="/stylesheets/style.css")
-        title Shorcut
-    body
-        include components/header.pug
-
-        .container
+        link(rel="stylesheet" href="/public/stylesheets/style.css")
+        title YouRfan
+    body.bg-light.bg-body-tertiary
+        include components/header
+        main.container.p-5
             block content
+        block modal
+        include components/footer
 
-        include components/footer.pug
-
+    script(src="/bootstrap/js/bootstrap.bundle.min.js")
+    block scripts
+        

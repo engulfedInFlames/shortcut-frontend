@@ -1,16 +1,68 @@
-header.hero(role='banner')
-    a(href='/') 
-        span Shortcut
-    nav
-        div 
-        div
-        ul
-            details.dropdown-menu(role='list', dir='rtl')
-                summary(aria-haspopup='listbox', role='link') 메뉴
-                ul(role='listbox')
+
+header
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+        .container-fluid
+            a.navbar-brand(href="/") 
+                span You
+                | Rfan
+            ul.navbar-nav.me-auto.mb-2.mb-md-0
+                li.nav-item
+                    a.nav-link.active(aria-current="page", href="/")  
+                        span 홈
+                li.nav-item
+                    a.nav-link.active(aria-current="page", href="/report")  
+                        span 신고하기
+                        i.bi.bi-exclamation-diamond
+                li.nav-item
+                    a.nav-link(href="#") Link
+                li.nav-item
+                    a.nav-link.disabled Disabled
+            form.d-flex(role="search")
+                input.form-control.me-2.rounded-pill(name="search" type="search", placeholder="Search", aria-label="Search")
+                button.d-none(type="submit") Search
+            div.profile-btn.d-flex.justify-content-between.align-items-center.ms-4
+                .video-upload.hover-overlay.d-flex.justify-content-center.align-items-center
+                    a.video-upload-btn.text-white(type="button", href="/upload")
+                        i.bi.bi-box-arrow-in-down
+                .dropdown.ms-4
+                    button.border.d-flex.justify-content-between.align-items-center.bg-white.px-3.rounded-pill.ms-0.shadow-sm#dropdownMenuButton(type="button" data-bs-toggle="dropdown" aria-expanded="false" alt="Avatar")
+                        i.bi.bi-list.fw-bold
+                        div.rounded-circle.d-flex.justify-content-center.align-items-center.bg-primary
+                            i.bi.bi-person-fill
+                    ul.dropdown-menu.mx-0.shadow(aria-labelledby="dropdownMenuButton")
                         li
-                            a(href='#') 업로드
+                            a.btn.py-2.dropdown-item(type="button", data-bs-toggle="modal" data-bs-target="#loginModal") 로그인
                         li
-                            a(href='#') 로그인
+                            a.py-2.dropdown-item(href='/signup') 회원가입
                         li
-                            a(href="#") 로그아웃
+                            a.py-2.dropdown-item(href="#") 내 정보
+                        li
+                            a.py-2.dropdown-item.dropdown-item-danger(href='#') 로그아웃
+                        
+    #loginModal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="loginModalLabel", aria-hidden="true")
+        .modal-dialog(role="document")
+            .modal-content.px-4
+                .modal-header.px-4.py-5.border-bottom-0.d-flex.align-items-center
+                    h1.modal-title 로그인
+                    button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+                .modal-body
+                    form
+                        .form-floating.mb-3
+                            input#floatingInput.form-control.rounded-3(type="email", placeholder="example@domain.com")
+                            label(for="floatingInput") 이메일
+                        .form-floating.mb-3
+                            input#floatingInput.form-control.rounded-3(type="password", placeholder="Password")
+                            label(for="floatingInput") 비밀번호
+                        .form-check.text-start.my-3
+                            input#flexCheckDefault.form-check-input(type="checkbox", value="remember-me")
+                            label.form-check-label(for="flexCheckDefault")
+                                | Remember me
+                    small.text-body-secondary 🔸등록된 이메일과 비밀번호를 입력하고 로그인 버튼을 클릭하세요.
+                    button.btn.btn-primary.w-100.px-4.py-3.mt-4.mb-4.shadow-sm(type="submit")
+                        | 로그인
+                    hr
+                    .social-btns.mt-2.d-flex.flex-column
+                        button.btn.kakao-btn.py-3.mb-2.w-100.shadow-sm(type='button') Login with Kakao
+                        button.btn.github-btn.py-3.mb-2.w-100.shadow-sm(type='button') Login with GitHub
+                        button.btn.google-btn.py-3.mb-2.w-100.shadow-sm(type='button') Login with Google
+

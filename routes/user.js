@@ -3,7 +3,15 @@ const userRouter = express.Router();
 
 const getMe = (req, res, next) => {
   try {
-    return res.render("users/me");
+    return res.render("pages/me");
+  } catch (e) {
+    console.log(e);
+    return res.send("Something Wrong!");
+  }
+};
+const getMeUpdate = (req, res, next) => {
+  try {
+    return res.render("pages/me-update");
   } catch (e) {
     console.log(e);
     return res.send("Something Wrong!");
@@ -11,6 +19,7 @@ const getMe = (req, res, next) => {
 };
 
 userRouter.get("/me", getMe);
+userRouter.get("/me/update", getMeUpdate);
 
 ////////////////////////////////////////////////
 // 이하는 파라미터를 사용한 url 설정 예시입니다. //

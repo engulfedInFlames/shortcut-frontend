@@ -1,0 +1,33 @@
+#report {
+  width: 60%;
+  max-width: 784px;
+  padding-bottom: 4rem;
+  #report-form {
+    .image-file-drop-area {
+      position: relative;
+      padding: 4rem;
+      border: 2px dashed $primary;
+      transition: 0.2s;
+      #choose-image-file {
+        flex-shrink: 0;
+        font-size: 1rem;
+        background-color: transparent;
+        margin-right: 0.5rem;
+      }
+      #image-file-message {
+        font-size: 1rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      #image-file-input {
+        cursor: pointer;
+        left: 0;
+        top: 0;
+        opacity: 0;
+      }
+    }
+    #report-form__text {
+      height: 16rem;
+    }
+  }
+}

@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,node,windows
 
+
+### Personal ###
+personal.md
+
 ### macOS ###
 # General
 .DS_Store
@@ -220,3 +224,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,node,windows
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

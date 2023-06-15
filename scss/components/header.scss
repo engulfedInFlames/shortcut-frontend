@@ -1,0 +1,79 @@
+header {
+  .navbar {
+    .navbar-brand {
+      span {
+        color: $custom-red;
+      }
+    }
+    .navbar-nav {
+      i {
+        color: $custom-red;
+        margin-left: 0.25rem;
+      }
+    }
+    .profile-btn {
+      .video-upload-btn {
+        i {
+          font-size: 1.5rem;
+          transition: color 0.3s;
+          &:hover {
+            color: rgb(162, 162, 162);
+          }
+        }
+      }
+      .dropdown {
+        button {
+          width: 6rem;
+          height: 3rem;
+          transition: transform 0.3s;
+          > i {
+            color: $primary;
+            font-size: 1.25rem;
+          }
+          > div {
+            padding: 0.15rem;
+            i {
+              color: white;
+              font-size: 1.15rem;
+              padding: 0.15rem;
+            }
+          }
+        }
+        button.show {
+          transform: scale(0.9);
+        }
+        .dropdown-menu {
+          left: -3.5rem;
+          li {
+            button,
+            a {
+              font-size: 1.25rem;
+              &.dropdown-item-danger {
+                color: $custom-red;
+                &:hover,
+                &:focus,
+                &:active {
+                  color: #fff;
+                  background-color: $custom-red;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #loginModal {
+    .social-btns {
+      button {
+        &:nth-child(1) {
+          background-color: #f3e24d;
+        }
+        &:nth-child(2) {
+          color: white;
+          background-color: black;
+        }
+      }
+    }
+  }
+}
